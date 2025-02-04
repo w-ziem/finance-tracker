@@ -2,9 +2,10 @@
 
 
 ### Currently working on:
-- HTML template
-- main CSS styles
+- fixing alignment of expenses list
+- modal HTML template
 - modal CSS styles
+
 
 ### Todo: 
 - Define categories in js
@@ -22,6 +23,8 @@
 
 
 ### Done:
+- main CSS styles
+- main HTML template
 - project overview
 - UI wireframe
 
