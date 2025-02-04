@@ -2,7 +2,6 @@
 
 
 ### Currently working on:
-- fixing alignment of expenses list
 - modal HTML template
 - modal CSS styles
 
@@ -23,6 +22,7 @@
 
 
 ### Done:
+- fixing alignment of expenses list
 - main CSS styles
 - main HTML template
 - project overview

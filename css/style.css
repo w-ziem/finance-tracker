@@ -81,10 +81,10 @@ aside .total{
     justify-content: space-between;
 }
 
-/* 
+
 .lower{
     width: 80%;
-} */
+}
 
 .buttons-wrapper{
     display: flex;
@@ -130,22 +130,17 @@ aside .total{
     flex-direction: column;
 }
 
-.headlines{
-    display: flex;
-    gap: 13%;
-    list-style: none;
-}
 
-.headlines li:nth-child(3) {
-    position: relative;
-    left: 7%;
-}
+
+
 
 .node {
     display: flex;
     justify-content: space-between;
     gap: 4%;
 }
+
+
 
 .node p {
     flex: 1;
@@ -154,32 +149,12 @@ aside .total{
     text-overflow: ellipsis;
 }
 
-.node p:nth-child(1) {
-    flex-basis: 15%;
-}
 
-.node p:nth-child(2) {
-    flex-basis: 25%;
-}
-
-.node p:nth-child(3) {
-    flex-basis: 10%;
-}
-
-.node p:nth-child(4) {
-    flex-basis: 20%;
-}
-
-.node p:nth-child(5) {
-    flex-basis: 20%;
-}
-
-.node p:last-child{
+.transaction-list .node:not(:first-child) p:last-child{
     text-decoration: underline;
 }
 
-.node p:last-child:not(:empty):hover{
-    text-decoration: underline;
+.node:not(:first-child) p:last-child:not(:empty):hover{
     color: #747373;
     cursor: pointer;
 }
