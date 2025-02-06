@@ -115,7 +115,7 @@
         <div class="list-wrapper">
             
             <ul class="transaction-list">
-                <li>
+                <li class="node">
                     <p>🗓️ Date</p>
                     <p>🔤 Name</p>
                     <p>💰 Amount</p>
@@ -143,8 +143,27 @@
 
 
     <div class="modal">
-        <!-- TODO -->
+        <input type="text" placeholder="Name...">
+        <label for="amount-input">amount</label>
+        <input type="number" id="amount" placeholder="Empty" min="0">
+        <label for="date-input">date</label>
+        <input type="date" id="date-input" placeholder="Empty">
+        <label for="category-input">category</label>
+        <select name="categories" id="category-input">
+            <option value="">Empty</option>
+            <option value="house">house</option>
+            <option value="groceries">groceries</option>
+            <option value="shopping">shopping</option>
+            <option value="savings">savings</option>
+            <option value="entertainment">entertainment</option>
+            <option value="health">health</option>
+            <option value="transport">transport</option>
+            <option value="random">random</option>
+        </select>
+        <textarea name="modal-note" id="modal-note" placeholder="Empty"></textarea>
     </div>
+    
+    <div class="body-cover"></div>
 
     <script src="js/ui.js"></script>
     <script src="js/modal.js"></script>

@@ -2,8 +2,8 @@
 
 
 ### Currently working on:
-- modal HTML template
-- modal CSS styles
+- note modal HTML
+- "new" modal styles
 
 
 ### Todo: 
@@ -22,6 +22,7 @@
 
 
 ### Done:
+- "new" modal HTML
 - fixing alignment of expenses list
 - main CSS styles
 - main HTML template
