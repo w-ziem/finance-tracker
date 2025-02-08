@@ -3,14 +3,15 @@
 
 ### Currently working on:
 - note modal HTML
-- "new" modal styles
+- note modal styles
+
 
 
 ### Todo: 
-- Define categories in js
-- Print categories 
+- basic js structure (select all elements, add basic listeners, define all data structures needed - e.g categories, maybe some objects for entries)
 - Expense / Income tab swtiching and printing them
 - Adding new expense or income with modal
+
 - Calculate expense (with percentage per category) summary and print summary
 
 ---
@@ -22,6 +23,7 @@
 
 
 ### Done:
+- "new" modal styles
 - "new" modal HTML
 - fixing alignment of expenses list
 - main CSS styles

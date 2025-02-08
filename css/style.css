@@ -170,32 +170,3 @@ aside .total{
     color: #747373;
     cursor: pointer;
 }
-
-.modal{
-    display: flex;
-    flex-direction: column;
-    width: 50%;
-    height: 50%;
-    position: absolute;
-    top: 40%;
-    left: 30%;
-    border: 1px solid black;
-}
-
-.modal *:not(label){
-    padding: 2%;
-}
-
-.modal *{
-    border: none;
-    background-color: rgba(199, 197, 197, 0.8);
-}
-
-#modal-note{
-    width: 100%;
-    height: 100%;
-}
-
-body > *:not(.modal){
-    filter: blur(2px);
-}

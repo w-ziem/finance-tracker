@@ -1,0 +1,91 @@
+
+
+
+/* aby akttywować trzeba do body dodać klase modal-active */
+body.modal-active > *:not(.modal){
+    filter: blur(2px);
+}
+
+
+
+
+
+.modal {
+    width: 500px;
+    background-color: rgb(119, 119, 119);
+    background-color: rgba(119, 110, 119, 0.8);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 30%;
+}
+
+.modal-button{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.discard-button {
+    top: 10px;
+    right: 35px;
+    background-color: rgb(240, 49, 15);
+}
+
+.save-button{
+    right: 10px;
+    top: 10px;
+    background-color: greenyellow;
+}
+
+.input-container {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.input-container label {
+    font-weight: bold;
+    min-width: 60px;
+}
+
+.name-input {
+    font-weight: bold;
+    font-style: italic;
+    font-size: 18px;
+    width: 100%;
+    padding: 5px;
+}
+
+input {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 16px;
+    width: 100%;
+    outline: none;
+    border-bottom: 1px solid white;
+}
+
+input::placeholder {
+    color: lightgray;
+}
+
+.modal-note {
+    width: 100%;
+    height: 80px;
+    background-color: white;
+    color: black;
+    padding: 8px;
+    border-radius: 4px;
+}
+
+.hidden{
+    display: none;
+}
