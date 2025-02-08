@@ -89,3 +89,26 @@ input::placeholder {
 .hidden{
     display: none;
 }
+
+
+.note-content{
+    padding: 3%;
+    color: aliceblue;
+    font-weight: 450;
+}
+
+.close-button{
+    border-radius: 4px;
+    color: aliceblue;
+    border: 1px solid black;
+    width: fit-content;
+    padding: 3px;
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+}
+
+.close-button:hover{
+    cursor: pointer;
+    background-color: #c7c5c5ac;
+}
