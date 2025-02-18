@@ -11,7 +11,7 @@ document.querySelector(".discard-button").addEventListener("click", () => {
 });
 
 
-const transactionEntries = document.querySelectorAll(".node");
+export const transactionEntries = document.querySelectorAll(".node");
 
 transactionEntries.forEach(node => {
     const noteLink = node.querySelector(".notes");
