@@ -2,13 +2,11 @@
 
 
 ### Currently working on:
-- note modal HTML
-- note modal styles
+- basic js structure (select all elements, add basic listeners, define all data structures needed - e.g categories, maybe some objects for entries)
 
 
 
 ### Todo: 
-- basic js structure (select all elements, add basic listeners, define all data structures needed - e.g categories, maybe some objects for entries)
 - Expense / Income tab swtiching and printing them
 - Adding new expense or income with modal
 
@@ -23,6 +21,9 @@
 
 
 ### Done:
+- swhowing modals upon click
+- note modal HTML
+- note modal styles
 - "new" modal styles
 - "new" modal HTML
 - fixing alignment of expenses list
