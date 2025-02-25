@@ -22,17 +22,21 @@ document.addEventListener("DOMContentLoaded", () => {
     transactionEntries.forEach(node => {
         const noteLink = node.querySelector(".notes");
         if(noteLink && noteLink.textContent.trim() !== ""){
-            noteLink.addEventListener("click", showNoteModal);
+            noteLink.addEventListener("click", (e) => showNoteModal);
         }
     });
 });
 
 const closeNoteButton = document.querySelector(".close-button");
 
-export function showNoteModal(){
+export function showNoteModal(e){
+    const note = document.querySelector("#show-note");
+    const noteText = e.target.getAttribute("data-note");
+    console.log(`odczytane notatki z data: ${noteText}`);
+    note.querySelector(".note-content").textContent = noteText; 
     document.querySelector("body").classList.add("modal-active");
     closeNoteButton.classList.remove("hidden");
-    document.querySelector("#show-note").classList.remove("hidden");
+    note.classList.remove("hidden");
 }
 
 function closeNoteModal(){
@@ -49,7 +53,7 @@ function getTransactionEntries() {
     transactionEntries.forEach(node => {
         const noteLink = node.querySelector(".notes");
         if(noteLink && noteLink.textContent.trim() !== ""){
-            noteLink.addEventListener("click", showNoteModal);
+            noteLink.addEventListener("click", (e) => showNoteModal);
         }
     });
     return transactionEntries;

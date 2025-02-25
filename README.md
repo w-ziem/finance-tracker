@@ -8,7 +8,6 @@
 
 ### Todo: 
 - Calculate expense (with percentage per category) summary and print summary
-- fix problem with the showing notes
 ---
 #### backend:
 - REST API for auth (registration and login)
@@ -18,6 +17,7 @@
 
 
 ### Done:
+- fix problem with the showing notes
 - Adding new expense or income with modal
 - Expense / Income tab swtiching and printing them
 - swhowing modals upon click
