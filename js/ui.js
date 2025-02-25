@@ -1,6 +1,6 @@
 import { getTransactionEntries } from "./modal.js";
 import { showNoteModal } from "./modal.js";
-import { UpdateSummary } from "./app.js";
+import { calculateTotalIncomeAndExpense } from "./app.js";
 
 const incomeTabButton = document.querySelector(".income-button");
 const expensesTabButton = document.querySelector(".expense-button");
@@ -41,6 +41,8 @@ function filterTransactions() {
 //at the start make sure all entries are shown
 document.addEventListener("DOMContentLoaded", () => {
     filterTransactions();
+    updateSummary();
+    updateCategories();
 })
 
 
@@ -76,6 +78,25 @@ export function addTransactionToList(transaction) {
     transactionItem.querySelector(".notes").addEventListener("click", showNoteModal);
     transactionList.appendChild(transactionItem);
     filterTransactions();
-    UpdateSummary();
+    updateSummary();
+    updateCategories()
 }
 
+
+
+
+export function updateSummary(){
+    //korzysta z funkcji obliczające łączne wydatki i przychodzy, wyświetla je na podsumowaniu
+    // #total-income #total-expense #total-summary - selektory dla paragrafów wyświetlająch podsumowanie
+    const [totalIncome, totalExpense] = calculateTotalIncomeAndExpense();
+    const totalSummary = (totalIncome - totalExpense).toFixed(2);
+    const summaryParaContent = totalSummary >= 0 ? `+ $${totalSummary}` : `$${totalSummary}`;
+    document.querySelector("#total-income").textContent = `$${totalIncome}`;
+    document.querySelector("#total-expense").textContent = `$${totalExpense}`;
+    document.querySelector("#total-summary").textContent = summaryParaContent;
+}
+
+
+function updateCategories(){
+    
+}

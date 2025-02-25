@@ -71,7 +71,7 @@ function createTransaction() {
     const noteInput = document.querySelector(".modal-note");
     
     const nameInputValue = nameInput.value.trim();
-    const amountInputValue = Number(amountInput.value.trim());
+    const amountInputValue = Number(amountInput.value.replace("," , ".").trim());
     const dateInputValue = dateInput.value.trim();
     const categoryInputValue = categoryInput.value.trim();
     const noteInputValue = noteInput.value.trim();

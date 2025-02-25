@@ -1,35 +1,43 @@
 // obliczanie wartości łącznych do kategorii, 
 import { TRANSACTIONS } from "./modal.js";
 
-export function UpdateSummary(){
-    //korzysta z funkcji obliczające łączne wydatki i przychodzy, wyświetla je na podsumowaniu
-    // #total-income #total-expense #total-summary - selektory dla paragrafów wyświetlająch podsumowanie
-    const [totalIncome, totalExpense] = calculateTotalIncomeAndExpense();
-    const totalSummary = Math.round(totalIncome - totalExpense);
-    const summaryParaContent = totalSummary >= 0 ? `+ ${totalSummary}` : `${totalSummary}`;
-    document.querySelector("#total-income").textContent = totalIncome;
-    document.querySelector("#total-expense").textContent = totalExpense;
-    document.querySelector("#total-summary").textContent = summaryParaContent;
-}
 
-//nie powtarzać wartości
-function calculateTotalIncomeAndExpense(){
-    let income = Number(document.querySelector("#total-income").textContent) || 0;
-    let expense = Number(document.querySelector("#total-expense").textContent) || 0;
+export function calculateTotalIncomeAndExpense(){
+    //get current amount or start with 0
+    let income = Number(document.querySelector("#total-income").textContent.substring(1)) || 0; 
+    let expense = Number(document.querySelector("#total-expense").textContent.substring(1)) || 0;
     console.log([income, expense]);
-    console.log(TRANSACTIONS)
+    console.log(document.querySelector("#total-income").textContent)
     TRANSACTIONS.forEach(entry => {
         console.log(entry)
         if(entry.category === "income" && ! entry.caculated){
             income += Number(entry.amount);
-            entry.caculated = true;
+            entry.caculated = true; //ensure same transaction is only calculated once
         } else if( ! entry.caculated ){
             expense += Number(entry.amount);
-            entry.calculated = true;
+            entry.calculated = true; //ensure same transaction is only calculated once
         }
     });
     console.log([income, expense]);
-    return [income, expense];
+    return [income.toFixed(2), expense.toFixed(2)];
 }
 
-//TOTAL WYRZUCA NAN NAPRAWIC!!!
+
+let categoryTotal = {
+    house: 0,
+    groceries: 0,
+    shopping: 0,
+    savings: 0,
+    entertainment: 0,
+    health: 0,
+    transport: 0,
+    income: 0,
+    random: 0
+};
+
+
+
+
+// function calculatePerCategory(){
+//     ...
+// }
