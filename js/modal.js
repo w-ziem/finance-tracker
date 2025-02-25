@@ -1,5 +1,6 @@
 import { addTransactionToList } from "./ui.js";
 
+export let TRANSACTIONS = [];
 
 document.querySelector(".new-button").addEventListener("click", () => {
     document.querySelector("body").classList.add("modal-active");
@@ -32,7 +33,6 @@ const closeNoteButton = document.querySelector(".close-button");
 export function showNoteModal(e){
     const note = document.querySelector("#show-note");
     const noteText = e.target.getAttribute("data-note");
-    console.log(`odczytane notatki z data: ${noteText}`);
     note.querySelector(".note-content").textContent = noteText; 
     document.querySelector("body").classList.add("modal-active");
     closeNoteButton.classList.remove("hidden");
@@ -63,8 +63,6 @@ export { getTransactionEntries };
 
 
 
-
-
 function createTransaction() {
     const nameInput = document.querySelector(".name-input");
     const amountInput = document.querySelector("#amount");
@@ -73,7 +71,7 @@ function createTransaction() {
     const noteInput = document.querySelector(".modal-note");
     
     const nameInputValue = nameInput.value.trim();
-    const amountInputValue = amountInput.value.trim();
+    const amountInputValue = Number(amountInput.value.trim());
     const dateInputValue = dateInput.value.trim();
     const categoryInputValue = categoryInput.value.trim();
     const noteInputValue = noteInput.value.trim();
@@ -95,9 +93,11 @@ function createTransaction() {
         amount: amountInputValue,
         date: dateInputValue,
         category: categoryInputValue,
-        notes: noteInputValue
+        notes: noteInputValue,
+        calculated: false
     };
 
+    TRANSACTIONS.push(transaction);
     addTransactionToList(transaction);
     closeNewEntryModal();
 }

@@ -87,17 +87,17 @@
         <h1 class="side-heading">Monthly budget</h1>
         <div class="total">
             <p>total income</p>
-            <p>$5332.79</p>
+            <p id="total-income">$5332.79</p>
         </div>
 
         <div class="total">
             <p>total expenses</p>
-            <p>$4322.70</p>
+            <p id="total-expense">$4322.70</p>
         </div>
         <hr>
         <div class="total">
             <p>monthly summary</p>
-            <p>+$1010.09</p>
+            <p id="total-summary">+$1010.09</p>
         </div>
     </aside>
 
@@ -125,12 +125,12 @@
                     <p>📂 Category</p>
                     <p class="notes">📄 Notes</p>
                 </li>
-                <li class="node income">
+                <!-- <li class="node income">
                     <p>January 30, 2025</p>
                     <p>🟢Wypłata za korepetycje z firmy</p>
                     <p>$1800.00</p>
                     <p>⬇️income</p>
-                    <p class="notes">show notes</p>
+                    <p class="notes" data-note="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequatur sequi fugit enim quos, numquam ratione molestiae minima accusantium neque blanditiis laboriosam quam at quisquam? Officiis quis voluptatem tempora sit quae?">show notes</p>
                 </li>
                 <li class="node expense">
                     <p>January 5, 2025</p>
@@ -138,7 +138,7 @@
                     <p>$154.33</p>
                     <p>🧺groceries</p>
                     <p class="notes"></p>
-                </li>
+                </li> -->
             </ul>
 
         </div>
@@ -186,7 +186,7 @@
     </div>
     
     <div id="show-note" class="modal hidden">
-        <p class="note-content">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellat quod nihil neque pariatur cumque ea minus adipisci iste corporis inventore voluptatibus laboriosam eligendi omnis quia libero, illo, temporibus molestias qui?</p>
+        <p class="note-content"></p>
         <div class="close-button">Close</div>
     </div>
 

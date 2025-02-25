@@ -1,5 +1,6 @@
 import { getTransactionEntries } from "./modal.js";
 import { showNoteModal } from "./modal.js";
+import { UpdateSummary } from "./app.js";
 
 const incomeTabButton = document.querySelector(".income-button");
 const expensesTabButton = document.querySelector(".expense-button");
@@ -62,6 +63,7 @@ export function addTransactionToList(transaction) {
     const transactionItem = document.createElement("li");
     const transactionList = document.querySelector(".transaction-list");
     transactionItem.classList.add("node", transaction.category);
+    if(transaction.category !== "income") transactionItem.classList.add("expense");
     const transactionNameString = transaction.category === "income" ? `🟢${transaction.name}` : `🔴${transaction.name}`;
     const transactionCategoryString = `${categoryEmojis[transaction.category]}${transaction.category}`;
     transactionItem.innerHTML = `
@@ -74,5 +76,6 @@ export function addTransactionToList(transaction) {
     transactionItem.querySelector(".notes").addEventListener("click", showNoteModal);
     transactionList.appendChild(transactionItem);
     filterTransactions();
+    UpdateSummary();
 }
 
