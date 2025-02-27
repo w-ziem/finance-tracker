@@ -1,6 +1,7 @@
 import { getTransactionEntries } from "./modal.js";
 import { showNoteModal } from "./modal.js";
 import { calculateTotalIncomeAndExpense } from "./app.js";
+import { calculatePerCategory } from "./app.js";
 
 const incomeTabButton = document.querySelector(".income-button");
 const expensesTabButton = document.querySelector(".expense-button");
@@ -79,7 +80,7 @@ export function addTransactionToList(transaction) {
     transactionList.appendChild(transactionItem);
     filterTransactions();
     updateSummary();
-    updateCategories()
+    updateCategories();
 }
 
 
@@ -97,6 +98,21 @@ export function updateSummary(){
 }
 
 
-function updateCategories(){
-    
+export function updateCategories(){
+    const totals = calculatePerCategory();
+    const [_, totalExpense] = calculateTotalIncomeAndExpense();
+    Object.keys(totals).forEach(categoryKey => {
+        const amountElem = document.querySelector(`#${categoryKey}-amount`);
+        const percentageElem = document.querySelector(`#${categoryKey}-percentage`);
+
+
+        const amountPara = `$${(totals[categoryKey]).toFixed(2)}`;
+        //calculate percentage
+        const percentage = totalExpense > 0 ? ((totals[categoryKey] / Number(totalExpense)) * 100).toFixed(2) : 0;
+        const percentagePara = `${percentage}%`;
+        console.log(totalExpense, percentage)
+
+        amountElem.textContent = amountPara;
+        percentageElem.textContent = percentagePara;
+    });
 }

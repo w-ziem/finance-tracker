@@ -7,8 +7,7 @@
 
 
 ### Todo: 
-- Calculate expense (with percentage per category) summary and print summary
-
+- fix calculating same transactions to the total multiple times
 ---
 #### backend:
 - REST API for auth (registration and login)
@@ -18,6 +17,7 @@
 
 
 ### Done:
+- Calculate expense (with percentage per category) summary and print summary
 - Calculate and print monthly summary
 - fix problem with the showing notes
 - Adding new expense or income with modal
