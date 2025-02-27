@@ -12,10 +12,12 @@ export function calculateTotalIncomeAndExpense(){
     TRANSACTIONS.forEach(entry => {
         const entryMonth = Number(entry.date.split("-")[1]);
         if(entryMonth === CURRMONTH){
-            if(entry.category === "income" && ! entry.caculated){
+            if(entry.category === "income" && !entry.calculated){
+                console.log("entry being processed: ", entry);
                 income += Number(entry.amount);
-                entry.caculated = true; //ensure same transaction is only calculated once
-            } else if( ! entry.caculated ){
+                entry.calculated = true; //ensure same transaction is only calculated once
+            } else if( !entry.calculated ){
+                console.log("entry being processed: ", entry);
                 expense += Number(entry.amount);
                 entry.calculated = true; //ensure same transaction is only calculated once
             }

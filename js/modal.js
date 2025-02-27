@@ -88,7 +88,7 @@ function createTransaction() {
         return;
     }
 
-    const transaction = {
+    let transaction = {
         name: nameInputValue,
         amount: amountInputValue,
         date: dateInputValue,
